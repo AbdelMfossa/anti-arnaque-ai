@@ -128,7 +128,7 @@ export function AnalyzePage({ onBack }: AnalyzePageProps) {
     <div className="w-full max-w-7xl mx-auto py-10 px-4 md:px-8 pb-24">
       <button 
         onClick={onBack}
-        className="flex items-center space-x-2 text-sm font-medium text-slate-400 hover:text-slate-900 transition-colors mb-8 group"
+        className="flex items-center space-x-2 text-sm font-medium text-slate-400 hover:text-indigo-900 transition-colors mb-8 group"
       >
         <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
         <span>Retour à l'accueil</span>
@@ -137,13 +137,13 @@ export function AnalyzePage({ onBack }: AnalyzePageProps) {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 w-full">
         {/* Input Section (Left) */}
         <div className="col-span-1 lg:col-span-7 flex flex-col space-y-6">
-          <div className="bg-white rounded-[32px] shadow-sm border border-slate-200 p-8 md:p-10 flex-1 flex flex-col">
+          <div className="bg-white rounded-[32px] shadow-sm border border-indigo-100 p-8 md:p-10 flex-1 flex flex-col">
             <div className="mb-6 flex items-center space-x-4">
-              <div className="w-12 h-12 bg-slate-50 border border-slate-100 rounded-full flex items-center justify-center">
-                <Search className="w-6 h-6 text-slate-700" />
+              <div className="w-12 h-12 bg-indigo-50 border border-indigo-100 rounded-full flex items-center justify-center">
+                <Search className="w-6 h-6 text-indigo-700" />
               </div>
               <div>
-                <h2 className="text-2xl font-bold text-slate-900 tracking-tight">Vérifier un contenu</h2>
+                <h2 className="text-2xl font-bold text-indigo-950 tracking-tight">Vérifier un contenu</h2>
                 <p className="text-slate-500 font-light mt-1">Collez le message reçu ou téléchargez un fichier audio suspect.</p>
               </div>
             </div>
@@ -152,7 +152,7 @@ export function AnalyzePage({ onBack }: AnalyzePageProps) {
               id="content"
               value={text}
               onChange={(e) => setText(e.target.value)}
-              className="flex-1 w-full min-h-[200px] lg:min-h-0 p-6 bg-slate-50 border border-slate-200 rounded-[24px] resize-none focus:outline-none focus:ring-2 focus:ring-slate-900/10 focus:border-slate-500 text-slate-700 leading-relaxed font-light"
+              className="flex-1 w-full min-h-[200px] lg:min-h-0 p-6 bg-indigo-50/30 border border-indigo-100 rounded-[24px] resize-none focus:outline-none focus:ring-2 focus:ring-indigo-900/10 focus:border-indigo-400 text-slate-700 leading-relaxed font-light"
               placeholder="Collez ici l'offre d'emploi, l'email ou le message WhatsApp qui vous semble suspect..."
             />
 
@@ -169,19 +169,19 @@ export function AnalyzePage({ onBack }: AnalyzePageProps) {
                 {!audioFile ? (
                   <label 
                     htmlFor="audio-upload"
-                    className="border-2 border-dashed border-slate-200 rounded-[24px] p-4 flex items-center justify-center space-x-3 cursor-pointer hover:border-slate-400 hover:bg-slate-50 transition-colors"
+                    className="border-2 border-dashed border-indigo-100 rounded-[24px] p-4 flex items-center justify-center space-x-3 cursor-pointer hover:border-indigo-300 hover:bg-indigo-50/50 transition-colors"
                   >
-                    <UploadCloud className="h-5 w-5 text-slate-400" />
+                    <UploadCloud className="h-5 w-5 text-indigo-400" />
                     <span className="font-medium text-slate-600">Importer un audio</span>
                   </label>
                 ) : (
-                  <div className="border border-slate-200 rounded-[24px] p-4 flex items-center justify-between space-x-3 bg-slate-50">
+                  <div className="border border-indigo-100 rounded-[24px] p-4 flex items-center justify-between space-x-3 bg-indigo-50/50">
                     <div className="flex items-center gap-3 overflow-hidden pl-2">
-                      <FileAudio className="h-5 w-5 text-slate-400 shrink-0" />
-                      <span className="font-medium text-slate-700 truncate">{audioFile.name}</span>
+                      <FileAudio className="h-5 w-5 text-indigo-400 shrink-0" />
+                      <span className="font-medium text-indigo-900 truncate">{audioFile.name}</span>
                     </div>
-                    <button onClick={clearFile} className="p-2 hover:bg-slate-200 rounded-full transition-colors shrink-0" title="Retirer l'audio">
-                      <X className="h-4 w-4 text-slate-500" />
+                    <button onClick={clearFile} className="p-2 hover:bg-indigo-100 rounded-full transition-colors shrink-0" title="Retirer l'audio">
+                      <X className="h-4 w-4 text-indigo-500" />
                     </button>
                   </div>
                 )}
@@ -189,7 +189,7 @@ export function AnalyzePage({ onBack }: AnalyzePageProps) {
                 <button 
                   onClick={analyzeContent}
                   disabled={isAnalyzing || (!text && !audioFile)}
-                  className="bg-slate-900 hover:bg-slate-800 disabled:bg-slate-300 disabled:text-slate-500 text-white font-medium rounded-[24px] py-4 shadow-sm transition-all flex items-center justify-center space-x-2"
+                  className="bg-indigo-950 hover:bg-indigo-900 disabled:bg-slate-300 disabled:text-slate-500 text-white font-medium rounded-[24px] py-4 shadow-lg shadow-indigo-100 transition-all flex items-center justify-center space-x-2"
                 >
                   {isAnalyzing ? (
                     <>
@@ -213,10 +213,10 @@ export function AnalyzePage({ onBack }: AnalyzePageProps) {
             </div>
           </div>
 
-          <div className="bg-slate-50 border border-slate-200 rounded-[24px] p-6 flex items-start space-x-4">
-            <Info className="h-6 w-6 text-slate-400 mt-0.5 shrink-0" />
+          <div className="bg-indigo-50/50 border border-indigo-100 rounded-[24px] p-6 flex items-start space-x-4">
+            <Info className="h-6 w-6 text-indigo-400 mt-0.5 shrink-0" />
             <p className="text-slate-600 font-light leading-relaxed">
-              <strong className="font-medium text-slate-800">Rappel de sécurité :</strong> Les arnaqueurs utilisent souvent l'urgence. Prenez toujours le temps de réfléchir et de ne jamais agir dans la précipitation.
+              <strong className="font-medium text-indigo-950">Rappel de sécurité :</strong> Les arnaqueurs utilisent souvent l'urgence. Prenez toujours le temps de réfléchir et de ne jamais agir dans la précipitation.
             </p>
           </div>
         </div>
@@ -230,15 +230,15 @@ export function AnalyzePage({ onBack }: AnalyzePageProps) {
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.95 }}
-                className="bg-white rounded-[32px] shadow-sm border border-slate-200 flex flex-col h-full overflow-hidden"
+                className="bg-white rounded-[32px] shadow-sm border border-indigo-100 flex flex-col h-full overflow-hidden"
               >
                 <div className={`p-8 border-b ${
                   result.riskLevel === 'Danger' ? 'bg-red-50 border-red-100' :
                   result.riskLevel === 'Suspect' ? 'bg-orange-50 border-orange-100' :
-                  'bg-green-50 border-green-100'
+                  'bg-indigo-50 border-indigo-100'
                 }`}>
                   <div className="flex justify-between items-start mb-6">
-                    <h2 className="text-2xl font-bold text-slate-900 tracking-tight">Résultat</h2>
+                    <h2 className="text-2xl font-bold text-indigo-950 tracking-tight">Résultat</h2>
                     <span className={`px-4 py-1.5 text-xs font-bold rounded-full uppercase tracking-wider ${
                       result.riskLevel === 'Danger' ? 'bg-red-100 text-red-800' :
                       result.riskLevel === 'Suspect' ? 'bg-orange-100 text-orange-800' :
@@ -323,12 +323,12 @@ export function AnalyzePage({ onBack }: AnalyzePageProps) {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                className="hidden lg:flex bg-slate-50 border-2 border-dashed border-slate-200 rounded-[32px] p-10 flex-col items-center justify-center text-center h-full"
+                className="hidden lg:flex bg-indigo-50 border-2 border-dashed border-indigo-100 rounded-[32px] p-10 flex-col items-center justify-center text-center h-full"
               >
-                <div className="w-20 h-20 bg-white border border-slate-100 rounded-full flex items-center justify-center mb-6 shadow-sm">
-                  <Shield className="w-10 h-10 text-slate-300" />
+                <div className="w-20 h-20 bg-white border border-indigo-50 rounded-full flex items-center justify-center mb-6 shadow-sm">
+                  <Shield className="w-10 h-10 text-indigo-200" />
                 </div>
-                <h3 className="text-xl font-medium text-slate-700 mb-2">En attente d'analyse</h3>
+                <h3 className="text-xl font-medium text-indigo-900 mb-2">En attente d'analyse</h3>
                 <p className="text-slate-500 font-light max-w-sm">Les résultats de votre recherche apparaîtront ici de manière détaillée et compréhensible.</p>
               </motion.div>
             )}

@@ -10,34 +10,34 @@ export default function App() {
   const [currentView, setCurrentView] = useState<View>('home');
 
   return (
-    <div className="w-full h-full bg-slate-50 font-sans text-slate-900 flex flex-col min-h-screen selection:bg-slate-200">
+    <div className="w-full h-full bg-slate-50 font-sans text-slate-900 flex flex-col min-h-screen selection:bg-indigo-100">
       {/* Header */}
-      <header className="bg-white border-b border-slate-200 px-4 md:px-8 py-4">
+      <header className="bg-white border-b border-indigo-100 px-4 md:px-8 py-4">
         <div className="flex justify-between items-center max-w-7xl mx-auto w-full">
           <div 
             className="flex items-center space-x-3 cursor-pointer group"
             onClick={() => setCurrentView('home')}
             role="button"
           >
-            <div className="bg-slate-900 p-2.5 text-white rounded-[14px] shadow-sm group-hover:bg-slate-800 transition-colors border border-slate-700">
+            <div className="bg-indigo-950 p-2.5 text-white rounded-[14px] shadow-sm group-hover:bg-indigo-900 transition-colors border border-indigo-800">
               <Shield className="h-5 w-5" />
             </div>
             <div>
-              <h1 className="text-xl font-bold text-slate-900 leading-tight tracking-tight">Anti-Arnaque</h1>
-              <p className="text-xs text-slate-500 font-medium hidden sm:block">Bouclier Numérique</p>
+              <h1 className="text-xl font-bold text-indigo-950 leading-tight tracking-tight">Anti-Arnaque</h1>
+              <p className="text-xs text-indigo-600 font-medium hidden sm:block uppercase tracking-wider">Bouclier Numérique</p>
             </div>
           </div>
           
           <div className="flex items-center space-x-2 md:space-x-3">
             <button 
               onClick={() => setCurrentView('guide')}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${currentView === 'guide' ? 'bg-slate-100 text-slate-900 border border-slate-200' : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900 transparent border border-transparent'}`}
+              className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${currentView === 'guide' ? 'bg-indigo-50 text-indigo-900 border border-indigo-100' : 'text-slate-600 hover:bg-slate-100 hover:text-indigo-900 transparent border border-transparent'}`}
             >
               Mode d'emploi
             </button>
             <button 
               onClick={() => setCurrentView('analyze')}
-              className={`px-5 py-2 rounded-full text-sm font-medium transition-colors ${currentView === 'analyze' ? 'bg-slate-900 text-white shadow-sm' : 'bg-slate-800 text-white hover:bg-slate-900'}`}
+              className={`px-5 py-2 rounded-full text-sm font-medium transition-colors ${currentView === 'analyze' ? 'bg-indigo-950 text-white shadow-sm' : 'bg-indigo-800 text-white hover:bg-indigo-900'}`}
             >
               Analyser
             </button>
