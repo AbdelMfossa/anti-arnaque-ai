@@ -77,8 +77,8 @@ export function AnalyzePage({ onBack }: AnalyzePageProps) {
       }
 
       const response = await ai.models.generateContent({
-        model: 'gemini-3.1-pro-preview',
-        contents: { parts },
+        model: 'gemini-1.5-flash',
+        contents: [{ role: 'user', parts }],
         config: {
           systemInstruction: "Tu es un expert en cybersécurité. Analyse le contenu soumis. Détecte les techniques de manipulation sociale, les promesses irréalistes (faux espoirs) ou les anomalies dans le cas d'un audio. Rédige ton analyse de manière très simple et empathique, sans jargon technique, pour que la personne comprenne pourquoi elle est potentiellement ciblée.",
           responseMimeType: "application/json",
