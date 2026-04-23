@@ -1,0 +1,8 @@
+{
+  "name": "Anti-Arnaque Bouclier",
+  "description": "Application pour détecter les arnaques dans les textes et les audios grâce à l'IA.",
+  "requestFramePermissions": [
+    "microphone"
+  ],
+  "majorCapabilities": []
+}
