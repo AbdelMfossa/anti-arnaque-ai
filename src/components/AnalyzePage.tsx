@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ShieldAlert, ShieldCheck, Shield, UploadCloud, AlertTriangle, FileAudio, X, Search, AlertOctagon, Info, ArrowLeft } from 'lucide-react';
-import { GoogleGenAI, Type } from '@google/genai/web';
+import { GoogleGenAI, Type } from '@google/genai';
 
 // Initialize Gemini
 const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
@@ -77,7 +77,7 @@ export function AnalyzePage({ onBack }: AnalyzePageProps) {
       }
 
       const response = await ai.models.generateContent({
-        model: 'gemini-1.5-flash',
+        model: 'gemini-3-flash-preview',
         contents: [{ role: 'user', parts }],
         config: {
           systemInstruction: "Tu es un expert en cybersécurité. Analyse le contenu soumis. Détecte les techniques de manipulation sociale, les promesses irréalistes (faux espoirs) ou les anomalies dans le cas d'un audio. Rédige ton analyse de manière très simple et empathique, sans jargon technique, pour que la personne comprenne pourquoi elle est potentiellement ciblée.",
@@ -115,10 +115,11 @@ export function AnalyzePage({ onBack }: AnalyzePageProps) {
       if (!['Sûr', 'Suspect', 'Danger'].includes(parsedResult.riskLevel)) {
         parsedResult.riskLevel = 'Suspect';
       }
+
       setResult(parsedResult);
     } catch (err: any) {
-      console.error(err);
-      setError("Une erreur est survenue lors de l'analyse par notre IA. Vérifiez votre connexion ou réessayez plus tard.");
+      console.error("Gemini API Error:", err);
+      setError(`Erreur technique : ${err.message || JSON.stringify(err)}`);
     } finally {
       setIsAnalyzing(false);
     }
